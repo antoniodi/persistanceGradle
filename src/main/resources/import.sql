@@ -1,0 +1,2 @@
+insert into customer (name, last_name, email, create_at) values ('Luis Antonio', 'Cortés Rueda', 'anthonydicortes@gmail.com', '2019-12-02');
+insert into customer (name, last_name, email, create_at) values ('Alejandro', 'Gomez Hurtado', 'AlejoG@gmail.com', '2019-12-05');
