@@ -1,6 +1,10 @@
 package com.tutorial.persistance.models.entity;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -14,17 +18,21 @@ public class Customer implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotEmpty
     @Column(name = "name", nullable = false)
     private String name;
 
+    @NotEmpty
     @Column(name = "last_name", nullable = false)
     private String lastName;
 
     @Column(name = "email")
     private String email;
 
+    @NotNull
     @Column(name = "create_at" , nullable = false)
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
     private Date createAt;
 
     public Long getId() {
