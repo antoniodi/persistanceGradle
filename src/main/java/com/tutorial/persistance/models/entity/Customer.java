@@ -3,6 +3,7 @@ package com.tutorial.persistance.models.entity;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
@@ -26,6 +27,7 @@ public class Customer implements Serializable {
     @Column(name = "last_name", nullable = false)
     private String lastName;
 
+    @Email
     @Column(name = "email")
     private String email;
 
